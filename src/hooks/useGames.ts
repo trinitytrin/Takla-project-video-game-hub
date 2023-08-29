@@ -18,11 +18,11 @@ export interface Game {
     metacritic: number;
 }
 
-
+//params objects members' names should be as exactly the API provides the query parameter names
 
 const useGames = (gameQuery: GameQuery) => 
 useData<Game>('/games',
- {params : {genres : gameQuery.genre?.id, platforms: gameQuery.platform?.id}},
+{params : {genres : gameQuery.genre?.id, platforms: gameQuery.platform?.id, ordering: gameQuery.sortOrder,}},
  [gameQuery]);
 
 export default useGames;
