@@ -16,6 +16,7 @@ export interface Game {
     background_image: string;
     parent_platforms: {platform: Platforms}[];
     metacritic: number;
+    rating_top: number;
 }
 
 //params objects members' names should be as exactly the API provides the query parameter names
