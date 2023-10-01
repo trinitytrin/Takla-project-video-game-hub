@@ -1,5 +1,5 @@
 
-import { Platforms } from '../hooks/useGames';
+
 import { HStack, Icon } from '@chakra-ui/react';
 
 import { FaPlaystation, FaWindows, FaLinux, FaAndroid, FaXbox, FaApple } from 'react-icons/fa';
@@ -7,9 +7,10 @@ import { SiNintendo } from 'react-icons/si';
 import { MdPhoneIphone } from 'react-icons/md';
 import { BsGlobe } from 'react-icons/bs'
 import { IconType } from 'react-icons';
+import { Platform } from '../hooks/usePlatforms';
 
 interface PlatformProps {
-    platforms: Platforms[];
+    platforms: Platform[];
 }
 
 const PlatformIconList = ({ platforms }: PlatformProps) => {
