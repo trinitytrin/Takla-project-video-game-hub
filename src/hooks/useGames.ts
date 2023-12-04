@@ -27,7 +27,7 @@ const useGames = (gameQuery: GameQuery) => useInfiniteQuery<FetchResponse<Game>,
         parent_platforms: gameQuery.platform?.id,
         ordering: gameQuery.sortOrder,
         search: gameQuery.searchText,
-        page: pageParam
+        page: pageParam,
     }}),
     getNextPageParam: (lastPage, allPages) => {
 return lastPage.next? allPages.length +1 : undefined;
