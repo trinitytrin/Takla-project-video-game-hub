@@ -14,7 +14,7 @@ const useGenres = () => useQuery({
     queryKey: ['genres'],
     queryFn: genreService.getAll,
     staleTime: 24*60*60*1000, //24hrs 
-    initialData: {count: staticGenres.length, results: staticGenres, next: null}
+    initialData: staticGenres,
 });
 
 export default useGenres;
