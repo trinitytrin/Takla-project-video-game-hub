@@ -1,5 +1,7 @@
 import { Heading } from '@chakra-ui/react';
 import { GameQuery } from '../App';
+import useGenres, { Genre } from '../hooks/useGenres';
+import usePlatforms from '../hooks/usePlatforms';
 
 interface Props {
     gameQuery: GameQuery;
@@ -7,8 +9,15 @@ interface Props {
 
 const DynamicGameHeading = ({ gameQuery }: Props) => {
 
-    const dynamicHeading = `${gameQuery.platform?.name || ''}
-    ${gameQuery.genre?.name || ''}
+    const { data: genres } = useGenres();
+    const { data: platforms } = usePlatforms();
+    const genre = genres?.results.find(g => g.id === gameQuery.genreId);
+    const platform = platforms?.results.find(p => p.id === gameQuery.platformId);
+
+
+
+    const dynamicHeading = `${platform?.name || ''}
+    ${genre?.name || ''}
      Games`;
 
     return (
